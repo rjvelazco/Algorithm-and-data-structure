@@ -5,36 +5,15 @@
 // Should return false.
 // --------------------
 // const array1 = ['a', 'b', 'c', 'x'];
-// const array1 = ['z', 'y', 'x'];
+// const array2 = ['z', 'y', 'x'];
 // should return true.
 
 // 2 parameters - arrays - no size limit
 // return true or false
 
-// First try
-// Time Complexity - Big O(n^2)
-// Speace complexity - Big O(1)
-// const constainsCommonItems = (arr, arr2) => {
-//     for(let i = 0; i < arr.length; i++){
-//         for(let j = 0; j< arr2.length; j++){
-//             if(arr[i] === arr2[j]){
-//                 return true;
-//             }
-//         }
-//     }
-//     return false;
-// }
-// console.log( constainsCommonItems(['a', 'b', 'c', 'x'], ['z', 'y', 'x']));
-// console.log( constainsCommonItems(['a', 'b', 'c', 'x'], ['z', 'y', 'i']));
-
-// array1 ==> obj{
-//  a: true,
-//  b: true,
-//  c: true,
-//  d: true,
-//  e: true
-// }
-// array2[index] === obj.properties
+const array1 = ['a', 'b', 'c', 'x'];
+const array2 = ['z', 'y', 'x'];
+const array3 = ['z', 'y', 'i'];
 
 // Faster
 // Time Complexity - Big O(n^2)
@@ -68,10 +47,7 @@ const constainsCommonItems = (arr1, arr2) => {
     return false;
 }
 
-// console.log( constainsCommonItems(['a', 'b', 'c', 'x'], ['a', 'y', 'x']));
-// console.log( constainsCommonItems(['a', 'b', 'c', 'x'], ['z', 'y', 'i']));
-// console.log( constainsCommonItems(['a', 'b', 'c', 'x'], null));
-
+// More Readable
 const constainsCommonItems2 = (arr1, arr2) => {
     if(!Array.isArray(arr1) || !Array.isArray(arr2)){
         return false;
@@ -79,6 +55,29 @@ const constainsCommonItems2 = (arr1, arr2) => {
     return arr1.some( item => arr2.includes(item));
 }
 
-console.log( constainsCommonItems2(['a', 'b', 'c', 'x'], ['a', 'y', 'x']));
-console.log( constainsCommonItems2(['a', 'b', 'c', 'x'], ['z', 'y', 'i']));
-console.log( constainsCommonItems2(['a', 'b', 'c', 'x'], null));
+console.log( constainsCommonItems2(array1, array2) );
+console.log( constainsCommonItems2(array1, array3) );
+console.log( constainsCommonItems2(array2, null) );
+
+// First try
+// Time Complexity - Big O(n^2)
+// Speace complexity - Big O(1)
+// const constainsCommonItems = (arr, arr2) => {
+//     for(let i = 0; i < arr.length; i++){
+//         for(let j = 0; j< arr2.length; j++){
+//             if(arr[i] === arr2[j]){
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
+
+// array1 ==> obj{
+//  a: true,
+//  b: true,
+//  c: true,
+//  d: true,
+//  e: true
+// }
+// array2[index] === obj.properties
