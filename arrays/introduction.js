@@ -4,18 +4,16 @@ const strings = ['a', 'b', 'c', 'd'];
 // console.log(strings[2]); // Big O(1)
 
 // Push
-strings.push('e'); // Big O(1)
+strings.push('e'); // Big O(1) || Big O(n)
 
 // Pop
 strings.pop(); // Big O(1)
 strings.pop();
 
 // Unshift
-strings.unshift('z'); // Big O(n)
-
+strings.unshift('z'); // Big O(n)`
 
 // Splice
 strings.splice(2,0, 'Alien'); // Big O(n/2) -> Big O(n)
 
 console.log(strings);
-
